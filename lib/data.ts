@@ -103,12 +103,17 @@ export const projects: Project[] = [
   },
   {
     title: "Travan",
-    summary: "App de venda de passagens de van e ônibus intermunicipais.",
-    highlights: ["Busca de viagens, carrinho e pagamento", "Telas mobile em React Native"],
-    stack: ["React Native", "Expo", "TypeScript"],
-    team: "Em equipe",
+    summary: "App de passagens de van e ônibus para empresas de transporte intermunicipal.",
+    highlights: [
+      "Mapa de assentos por tipo de veículo e pagamento com Pix",
+      "Bilhete digital com QR code e cancelamento com reembolso",
+      "Painel da operação com vendas do dia e validação de embarque",
+    ],
+    stack: ["React Native", "Expo", "TypeScript", "Expo Router"],
+    team: "Individual",
     categories: ["Mobile", "Design"],
-    links: [{ label: "Código", href: "https://github.com/Batissta/travan-react-native" }],
+    links: [{ label: "Código", href: "https://github.com/talles1x/travan" }],
+    note: "v2 da versão feita em equipe",
   },
   {
     title: "Marketplace",
