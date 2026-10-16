@@ -3,12 +3,15 @@ export type Link = {
   href: string;
 };
 
+export type Category = "Web" | "Mobile" | "Design" | "Algoritmos";
+
 export type Project = {
   title: string;
   summary: string;
   highlights: string[];
   stack: string[];
   team: "Individual" | "Em equipe" | "Cliente";
+  categories: Category[];
   links: Link[];
   note?: string;
 };
@@ -20,13 +23,24 @@ export type Experience = {
   items: string[];
 };
 
+export type UxLaw = {
+  name: string;
+  rule: string;
+  applied: string;
+  /** id do elemento da página onde a lei foi aplicada */
+  target: string;
+  /** alternativa quando o alvo não aparece na tela (ex.: celular) */
+  fallback?: string;
+};
+
 export const profile = {
   name: "Talles Oliveira",
   role: "Front-end Developer & UI/UX Designer",
-  tagline: "Do protótipo no Figma ao código em produção.",
-  location: "Monteiro – PB",
-  about:
+  location: "Monteiro – PB, Brasil",
+  about: [
     "Desenvolvo interfaces pensando primeiro em quem vai usar. Começo no Figma, com wireframes e protótipos navegáveis guiados por Leis de UX e Gestalt, e levo o design até o código com React, Next.js e TypeScript.",
+    "Hoje trabalho como Desenvolvedor de Sistemas na SuperNet e atendo clientes como freelancer, cuidando da interface do primeiro rascunho até o deploy.",
+  ],
   links: {
     github: "https://github.com/talles1x",
     linkedin: "https://www.linkedin.com/in/talles-oliveira-trs/",
@@ -46,9 +60,9 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    role: "Desenvolvedor Front-end (freelance)",
+    role: "Desenvolvedor Front-end",
     company: "Baby Piscinas",
-    context: "Landing page",
+    context: "Freelance · Landing page",
     items: [
       "Do protótipo no Figma ao código em React + TypeScript",
       "SEO, eventos de conversão no GA4 e WhatsApp com mensagem pronta",
@@ -57,17 +71,20 @@ export const experiences: Experience[] = [
   },
 ];
 
+export const categories: Category[] = ["Web", "Mobile", "Design", "Algoritmos"];
+
 export const projects: Project[] = [
   {
     title: "Baby Piscinas",
     summary: "Landing page de vendas desenhada no Figma e levada para produção.",
     highlights: [
-      "Formulário de orçamento e botão de WhatsApp com mensagem pronta",
+      "Formulário de orçamento e WhatsApp com mensagem pronta",
       "SEO com dados estruturados e prévia de compartilhamento",
-      "Eventos de conversão no GA4 e carregamento sob demanda de imagens",
+      "Eventos de conversão no GA4",
     ],
-    stack: ["React", "TypeScript", "Vite", "Figma", "Vercel"],
+    stack: ["React", "TypeScript", "Vite", "Figma"],
     team: "Cliente",
+    categories: ["Web", "Design"],
     links: [],
     note: "Código privado do cliente",
   },
@@ -75,23 +92,23 @@ export const projects: Project[] = [
     title: "Heavy",
     summary: "E-commerce de moda com vitrine, página de produto e login.",
     highlights: [
-      "Rotas dinâmicas com React Router (/produto/:id)",
-      "Usuário logado em estado global com Context API",
-      "Header responsivo com hook próprio (useMedia)",
+      "Rotas dinâmicas com React Router",
+      "Usuário logado em estado global (Context API)",
+      "Header responsivo com hook próprio",
     ],
     stack: ["React", "React Router", "Context API", "CSS"],
     team: "Em equipe",
+    categories: ["Web"],
     links: [{ label: "Código", href: "https://github.com/talles1x/Ecommerce-Heavy" }],
   },
   {
     title: "Travan",
-    summary: "Aplicativo mobile desenvolvido em equipe na faculdade.",
-    highlights: ["Telas mobile em React Native", "Tipagem com TypeScript"],
-    stack: ["React Native", "TypeScript"],
+    summary: "App de venda de passagens de van e ônibus intermunicipais.",
+    highlights: ["Busca de viagens, carrinho e pagamento", "Telas mobile em React Native"],
+    stack: ["React Native", "Expo", "TypeScript"],
     team: "Em equipe",
-    links: [
-      { label: "Código", href: "https://github.com/Batissta/travan-react-native" },
-    ],
+    categories: ["Mobile", "Design"],
+    links: [{ label: "Código", href: "https://github.com/Batissta/travan-react-native" }],
   },
   {
     title: "Marketplace",
@@ -99,20 +116,22 @@ export const projects: Project[] = [
     highlights: ["Front-end em React", "API em Node.js"],
     stack: ["React", "Node.js", "HTML", "CSS"],
     team: "Em equipe",
+    categories: ["Web"],
     links: [
       { label: "Front-end", href: "https://github.com/Batissta/marketplace" },
       { label: "API", href: "https://github.com/lealgabryell/MarketplaceBackEnd" },
     ],
   },
   {
-    title: "Simulador de Alocação de Memória",
+    title: "Simulador de Memória",
     summary: "Compara First, Next, Best e Worst Fit em 100 simulações por algoritmo.",
     highlights: [
       "Memória modelada como lista duplamente encadeada",
-      "Divisão e fusão de blocos para reduzir fragmentação",
+      "Divisão e fusão de blocos contra fragmentação",
     ],
     stack: ["JavaScript", "Node.js"],
     team: "Individual",
+    categories: ["Algoritmos"],
     links: [
       { label: "Código", href: "https://github.com/talles1x/ProjetoRobertaAlgoritimos" },
     ],
@@ -123,17 +142,18 @@ export const projects: Project[] = [
     highlights: ["Nova interface do site", "Trabalho colaborativo com Git"],
     stack: ["HTML", "CSS", "Git"],
     team: "Em equipe",
+    categories: ["Web", "Design"],
     links: [
       { label: "Código", href: "https://github.com/Tech-Priest1/Caminhos-do-Frio" },
     ],
   },
 ];
 
-export const stack = {
-  "Front-end": ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
-  Mobile: ["React Native"],
+export const stack: Record<string, string[]> = {
+  "Front-end": ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML", "CSS"],
+  Mobile: ["React Native", "Expo"],
   Design: ["Figma", "Prototipagem", "UI Design", "Leis de UX", "Gestalt"],
-  Ferramentas: ["Git", "GitHub", "Node.js", "Vercel", "VS Code"],
+  Ferramentas: ["Git", "GitHub", "Node.js", "Vercel"],
 };
 
 export const education = {
@@ -141,3 +161,43 @@ export const education = {
   school: "UNIFACISA",
   period: "2023 – 2027",
 };
+
+export const uxLaws: UxLaw[] = [
+  {
+    name: "Lei de Fitts",
+    rule: "Alvos maiores e mais próximos são mais rápidos de clicar.",
+    applied: "O botão principal do topo é grande e fica logo abaixo do texto.",
+    target: "hero-cta",
+  },
+  {
+    name: "Lei de Hick",
+    rule: "Quanto mais opções, mais tempo para decidir.",
+    applied: "Os projetos têm só cinco filtros.",
+    target: "project-filters",
+  },
+  {
+    name: "Lei de Jakob",
+    rule: "Usuários preferem que o site funcione como os que já conhecem.",
+    applied: "Navegação fixa no topo, com a seção atual marcada.",
+    target: "site-nav",
+    fallback: "menu-button",
+  },
+  {
+    name: "Lei de Miller",
+    rule: "Guardamos poucos itens de cada vez na memória.",
+    applied: "A stack está dividida em quatro grupos curtos.",
+    target: "stack-grid",
+  },
+  {
+    name: "Efeito Von Restorff",
+    rule: "O que é diferente do resto é lembrado.",
+    applied: "Só existe uma cor de destaque: o que é roxo merece atenção.",
+    target: "hero-highlight",
+  },
+  {
+    name: "Limiar de Doherty",
+    rule: "Respostas abaixo de 400 ms mantêm a pessoa engajada.",
+    applied: "Cada interação, como este card de Design ↔ Código, responde na hora.",
+    target: "design-code",
+  },
+];
