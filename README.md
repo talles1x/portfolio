@@ -6,6 +6,12 @@ Meu portfólio pessoal como **Front-end Developer & UI/UX Designer**, feito com 
 
 ## Destaques
 
+- **Design ↔ Código ↔ Protótipo**: no topo, o mesmo componente aparece como frame do Figma, como TSX e funcionando de verdade
+- **Paleta de comandos** (`Ctrl/⌘ K`) para navegar e abrir links pelo teclado, também acessível pelo botão "Buscar"
+- **Leis de UX aplicadas e demonstradas**: ao clicar numa lei (Fitts, Hick, Jakob, Miller, Von Restorff, Doherty), o site rola até onde ela foi usada e destaca o elemento
+- **Tema claro e escuro** que segue o sistema, sem piscar na primeira carga
+- **Filtro de projetos**, destaque que acompanha o mouse nos cards e scroll-spy no menu
+- **Acessível**: navegação completa por teclado, link "pular para o conteúdo", contraste AA, alvos de toque de 44 px e respeito a `prefers-reduced-motion`
 - **App Router do Next.js** com a página gerada de forma estática (SSG)
 - **Conteúdo tipado** em `lib/data.ts`: experiências, projetos e stack ficam separados dos componentes, então atualizar o portfólio é só editar um arquivo
 - **Componentes reutilizáveis** (`Header`, `Section`, `ProjectCard`)
@@ -35,9 +41,16 @@ app/
 ├── page.tsx        # seções da página
 └── globals.css     # tema (cores e tipografia)
 components/
-├── Header.tsx
+├── Header.tsx          # menu com scroll-spy e barra de progresso
+├── CommandPalette.tsx  # Ctrl/⌘ K
+├── DesignCode.tsx      # Design ↔ Código ↔ Protótipo
+├── Projects.tsx        # filtro de projetos
+├── ProjectCard.tsx
+├── UxLaws.tsx          # leis de UX que destacam elementos da página
+├── ThemeToggle.tsx
 ├── Section.tsx
-└── ProjectCard.tsx
+└── Icons.tsx
 lib/
-└── data.ts         # conteúdo tipado do portfólio
+├── data.ts         # conteúdo tipado do portfólio
+└── theme.ts        # tema, paleta e destaque das leis de UX
 ```
