@@ -2,6 +2,8 @@
 
 Meu portfólio pessoal como **Front-end Developer & UI/UX Designer**, feito com **Next.js, TypeScript e Tailwind CSS**.
 
+🔗 **Acesse o site:** [talles-oliveira-dun.vercel.app](https://talles-oliveira-dun.vercel.app)
+
 ![Prévia do portfólio](docs/preview.jpg)
 
 ## Destaques
