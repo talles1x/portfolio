@@ -34,6 +34,7 @@ export function CommandPalette() {
         run: () => go(n.id),
       })),
       { id: "stack", label: "Stack", group: "Navegar", icon: <Hash />, run: () => go("stack") },
+      { id: "garagem", label: "Garagem 3D", group: "Navegar", icon: <Hash />, run: () => go("garagem") },
       {
         id: "github",
         label: "Abrir GitHub",
