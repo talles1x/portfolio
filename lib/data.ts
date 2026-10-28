@@ -205,4 +205,10 @@ export const uxLaws: UxLaw[] = [
     applied: "Cada interação, como este card de Design ↔ Código, responde na hora.",
     target: "design-code",
   },
+  {
+    name: "Efeito estética-usabilidade",
+    rule: "Interfaces bonitas parecem mais fáceis de usar.",
+    applied: "O carro 3D chama atenção, mas os controles continuam poucos, grandes e com rótulo.",
+    target: "garagem-canvas",
+  },
 ];
