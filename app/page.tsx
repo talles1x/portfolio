@@ -1,5 +1,6 @@
 import { CommandPalette } from "@/components/CommandPalette";
 import { DesignCode } from "@/components/DesignCode";
+import { Garage } from "@/components/Garage";
 import { Header } from "@/components/Header";
 import { ArrowDown, ArrowUpRight, Github, Linkedin } from "@/components/Icons";
 import { Projects } from "@/components/Projects";
@@ -172,11 +173,22 @@ export default function Home() {
           </div>
         </Section>
 
+        {/* ---------- Garagem 3D ---------- */}
+        <Section
+          id="garagem"
+          index="06"
+          label="garagem"
+          title="Fora do código: carros."
+          intro="Gosto muito de carros, então montei um configurador 3D direto no navegador. Gire, troque a cor e acenda os faróis."
+        >
+          <Garage />
+        </Section>
+
         {/* ---------- Contato ---------- */}
         <section id="contato" aria-labelledby="contato-title" className="border-t border-line py-20 sm:py-28">
           <div className="relative overflow-hidden rounded-[2rem] bg-accent-solid px-6 py-14 text-on-accent sm:px-14 sm:py-20">
             <div aria-hidden className="absolute -right-24 -top-24 size-80 rounded-full border-[40px] border-white/10" />
-            <p className="font-mono text-sm text-white/70">06 / contato</p>
+            <p className="font-mono text-sm text-white/70">07 / contato</p>
             <h2 id="contato-title" className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight sm:text-6xl">
               Bora construir algo juntos?
             </h2>
